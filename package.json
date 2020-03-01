@@ -1,0 +1,13 @@
+{
+  "name": "Design-token",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ishan-me/Dsgn-token.git",
+  "author": "Ishan Manandhar",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bulma": "^0.8.0",
+    "style-dictionary": "^2.8.3"
+  }
+}
