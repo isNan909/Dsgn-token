@@ -1,4 +1,5 @@
 const generateBtn = document.getElementById("generateMe");
+const loader = document.querySelector(".loaderWrapper");
 
 function getFontStyles(stylesArtboard) {
     const fontStyles = {};
@@ -74,6 +75,7 @@ function getFontStyles(stylesArtboard) {
             };
 
             Object.assign(fontStyles, fontObj);
+            loader.classList.add("loaderWrapper");
         }
     });
 
@@ -102,6 +104,8 @@ async function getStylesArtboard(figmaApiKey, figmaId) {
 
     Object.assign(baseTokeensJSON.token.fonts, getFontStyles(stylesArtboard));
 
+    loader.classList.add("hide");
+
     download(
         JSON.stringify(baseTokeensJSON, null, 4),
         "base.json",
@@ -120,6 +124,7 @@ function download(content, fileName, contentType) {
 }
 
 generateBtn.onclick = function () {
+    loader.classList.remove("hide");
     getStylesArtboard(
         "36208-ac2faf1c-3829-4679-8e29-cd81dcde443b",
         "JfZz46bVQzUA2TTtoSnhnG"
